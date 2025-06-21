@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Générateur de Donjons Mutants</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=UnifrakturCook&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chicle&family=Rubik+Bubbles&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        background: linear-gradient(
+          to bottom,
+          #40c4ff,
+          #fbe9e7,
+          #fff171,
+          #ffeb3b,
+          #fcc168,
+          #f3a099
+        );
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: #f0e6d2;
+        height: 100vh;
+        /* background-image: url("https://www.transparenttextures.com/patterns/black-linen.png");*/
+      }
+
+      header {
+        text-align: center;
+        padding: 2rem;
+        font-family: "Chicle", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 2.5rem;
+        color: #000;
+        text-shadow: 0 0 10px #ede2eb;
+        text-transform: uppercase;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: auto;
+        padding: 2rem;
+        background: rgba(107, 102, 102, 0.5);
+        border: 2px solid #ff66cc;
+        border-radius: 1rem;
+        box-shadow: 0 0 15px #ff66cc55;
+      }
+
+      button {
+        margin: auto;
+        background: #ff66cc;
+        color: #000;
+        font-weight: bold;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-family: "Cormorant Garamond", serif;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+        animation: scintille ease-in infinite alternate 2s;
+      }
+
+      button:active {
+        transform: scale(1);
+        animation: none;
+      }
+
+      .output {
+        margin-top: 2rem;
+        padding: 1rem;
+        background: #111;
+        border-left: 4px solid #ff66cc;
+        font-style: italic;
+      }
+      @keyframes scintille {
+        0% {
+          box-shadow: 0 0 15px #f8ceea;
+        }
+        50% {
+          box-shadow: 0 0 15px #c279aa;
+        }
+        100% {
+          box-shadow: 0 0 15px #ffffff;
+        }
+      }
+
+      img {
+        width: 160px;
+      }
+      #image {
+        position: absolute;
+      }
+      /*
+      @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap");
+
+      .generate-dungeon-button {
+        position: relative;
+        font-family: "Fredoka", sans-serif;
+        font-size: 1.4rem;
+        padding: 14px 28px;
+        color: #ffffff;
+        background-color: #ff7043;
+        border: 4px solid #b71c1c;
+        border-radius: 12px;
+        box-shadow: 0 6px #b71c1c;
+        cursor: pointer;
+        text-shadow: 1px 1px #000000;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .generate-dungeon-button::before {
+        content: "";
+        position: absolute;
+        top: -15%;
+        left: -15%;
+        width: 130%;
+        height: 130%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.3) 0%,
+          transparent 80%
+        );
+        border-radius: 50%;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.3s ease;
+        z-index: -1;
+      }
+
+      .generate-dungeon-button:hover::before {
+        animation: magic-glow 1.4s infinite ease-in-out;
+        opacity: 1;
+      }
+
+      @keyframes magic-glow {
+        0%,
+        100% {
+          transform: scale(0.8);
+          opacity: 0.6;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+      }*/
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="fr">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple Aperçu "Nuage Arc-en-ciel"</title>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap"
+          rel="stylesheet"
+        />
+        <style>
+          body {
+            margin: 0;
+            padding: 40px;
+            font-family: "Fredoka", sans-serif;
+            background: linear-gradient(
+              to top,
+              #c2f0c2 0%,
+              #d0eabf 20%,
+              #cbe9f3 40%,
+              #aee4ff 70%,
+              #f4faff 100%
+            );
+            min-height: 100vh;
+          }
+          h2,
+          h3 {
+            background-color: #f4faff;
+            color: #ff82a9;
+            border: 3px solid #aee4ff;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            margin: 20px 0 10px;
+          }
+          .room,
+          .descriptions {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 4px solid #aee4ff;
+            margin-bottom: 20px;
+          }
+          button {
+            background-color: #ff82a9;
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(255, 130, 169, 0.3);
+            transition: transform 0.2s, box-shadow 0.3s;
+          }
+          button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(255, 130, 169, 0.4);
+          }
+          button:active {
+            transform: scale(1);
+          }
+        </style>
+      </head>
+      <body>
+        <button>Générer</button>
+        <h2>Titre de section</h2>
+        <div class="descriptions">
+          <p>Description courte pour test visuel.</p>
+        </div>
+        <h3>Sous-titre</h3>
+        <div class="room">
+          <p>Contenu de pièce de donjon simulé.</p>
+        </div>
+      </body>
+    </html>
+
+    <!--
+    <header>Le labyrinthe merveilleux des adorables licornes</header>
+    <div class="container">
+      <button onclick="generateRoom()">Générer une salle</button>
+      <div class="output" id="roomOutput">
+        <p>
+          Une salle sombre et humide, où résonne un hennissement grotesque...
+        </p>
+      </div>
+    </div>
+
+    <div id="image">
+      <img
+        src="image test/81243386_1010849535933456_1223383196171763712_n.jpg"
+        alt=""
+      />
+    </div>
+     <button class="generate-dungeon-button">🎲 Générer un donjon</button> -->
+    <script>
+      const rooms = [
+        "Une caverne infestée de spores, où rôde une licorne-taupe aveugle aux naseaux sifflants.",
+        "Un temple renversé où une licorne-chérubin psalmodie des cantiques interdits.",
+        "Une clairière morte, pleine de racines animées, et au centre une licorne-arbre carnivore.",
+        "Un marais de bile violette, où barbote une licorne-batracien à trois langues.",
+        "Une ruine flottante, habitée par une licorne fractale en perpétuelle recomposition.",
+      ];
+
+      function generateRoom() {
+        const random = Math.floor(Math.random() * rooms.length);
+        document.getElementById("roomOutput").innerHTML =
+          "<p>" + rooms[random] + "</p>";
+      }
+    </script>
+  </body>
+</html>

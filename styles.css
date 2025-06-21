@@ -1,0 +1,371 @@
+/*
+Prochaine étape : créer une classe ou autre contenant toutes les polices et couleurs pour les appliquer ensuite aux différentes parties
+puis changer cette racine (je crois c'est roots, voir projet rush)
+*/
+:root {
+  /* Couleurs*/
+  --background-color: linear-gradient(
+    to top,
+    #c2f0c2 0%,
+    #d0eabf 20%,
+    #cbe9f3 40%,
+    #aee4ff 70%,
+    #f4faff 100%
+  ); /* Background color for the entire website, including individual sections */
+  --default-color: #292729; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #fa96a7; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #f8b6c1; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #f4faff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #f4faff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+
+  /*Polices */
+  --default-font: "Quicksand", sans-serif;
+  --midd-font: "Fredoka", sans-serif;
+  --heading-font: "Rubik Puddles", system-ui;
+}
+/* Structure générale */
+
+body {
+  display: flex;
+  flex-direction: row; /* ligne par défaut */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  width: 100vw;
+  height: 100vh; /* hauteur plein écran */
+
+  margin: 0;
+  padding: 0;
+
+  /* background: linear-gradient(to bottom, #d0f0ff, #f5faff, #fff6db);*/
+
+  background: var(--background-color);
+  /* background: linear-gradient(to bottom, #ffd7a9, #f8b6c1, #e574bc, #1d1243);*/
+  background-attachment: fixed;
+
+  overflow-y: auto; /* scrollbar verticale seulement */
+  overflow-x: hidden;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7rem;
+  width: 100%;
+  /* height: 33vh;*/
+  min-height: 150px; /* taille mini pour petit écran */
+  padding: 1rem;
+}
+
+/* Main en grille */
+
+main {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+  /*grid-template-columns: repeat(2, 1fr); ;*/
+  grid-template-rows: auto auto auto;
+  row-gap: 40px;
+  column-gap: 20px;
+  padding: 40px;
+  width: 80%;
+
+  margin: auto;
+  backdrop-filter: blur(4px);
+  border-radius: 30px;
+}
+
+/* Positionnement initial des zones */
+
+#unicornsDiv {
+  grid-column: 1 / 3;
+}
+
+#featuresDiv {
+  grid-column: 3 / 5;
+}
+
+footer {
+  grid-column: 1 / 5;
+}
+/*
+footer {
+  grid-column: 1 / 3;
+}*/
+/* Div flex vertical interne */
+
+div {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+/* Media queries */
+
+/* Tablette */
+
+@media (max-width: 800px) {
+  body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  header {
+    /* height: auto;*/
+    margin-top: 0;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  header button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  main {
+    width: 95%;
+    padding: 20px;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "cheerful"
+      "distinctive"
+      "room-1"
+      "room-2"
+      "room-3"
+      "room-4"
+      "footer";
+  }
+  /*
+  #unicornsDiv,
+  #featuresDiv,
+  #room1,
+  #room2,
+  #room3,
+  #room4,
+  footer {
+    grid-column: 1;
+  }
+
+  /* ... ton code existant ... */
+
+  #unicornsDiv {
+    grid-area: cheerful;
+  }
+  #featuresDiv {
+    grid-area: distinctive;
+  }
+  #room1 {
+    grid-area: room-1;
+  }
+  #room2 {
+    grid-area: room-2;
+  }
+  #room3 {
+    grid-area: room-3;
+  }
+  #room4 {
+    grid-area: room-4;
+  }
+  footer {
+    grid-area: footer;
+  }
+}
+
+/* Mobile */
+/*
+@media (max-width: 500px) {
+  
+
+  body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  header {
+    height: auto;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  header button {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  main {
+    width: 95%;
+    padding: 20px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "cheerful"
+      "distinctive"
+      "room-1"
+      "room-2"
+      "room-3"
+      "room-4"
+      "footer";
+  }
+
+  #unicornsDiv,
+  #featuresDiv,
+  #room1,
+  #room2,
+  #room3,
+  #room4,
+  footer {
+    grid-column: 1;
+  }
+}
+*/
+
+/* Styles */
+
+/*général */
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+/*header*/
+header div {
+  width: 25%;
+}
+h1 {
+  font-family: var(--heading-font);
+
+  color: var(--heading-color);
+  font-size: clamp(3.5rem, 5vw, 4.5rem);
+}
+
+button {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--midd-font);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 130, 169, 0.3);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  animation: scintille ease-in infinite alternate 3s;
+}
+
+button:active {
+  transform: scale(1);
+  animation: none;
+}
+@keyframes scintille {
+  0% {
+    box-shadow: 0 0 20px var(--accent-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--heading-color);
+  }
+  100% {
+    box-shadow: 0 0 20px var(--contrast-color);
+  }
+}
+
+button:hover::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2),
+    transparent 70%
+  );
+  border-radius: 50%;
+  animation: glow-pulse 2s infinite ease-in-out;
+  z-index: -1;
+}
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+}
+
+/*générateur*/
+
+h2,
+h3 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  margin: 10px auto;
+  padding: 0.5rem 1rem;
+  font-family: (var(--midd-font));
+  background-color: var(--surface-color);
+  color: var(--heading-color);
+}
+
+h2 {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+}
+.hLeft {
+  border-radius: 0px 20px;
+}
+.hRight {
+  border-radius: 20px 0px;
+}
+
+p,
+span {
+  font-family: var(--default-font);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--default-color);
+}
+
+div.room,
+div.descriptions {
+  background-color: rgba(255, 255, 255, 0.578);
+  padding: 20px;
+
+  border: solid 5px var(--accent-color);
+}
+.divLeft {
+  border-radius: 10px 50px;
+}
+.divRight {
+  border-radius: 50px 10px;
+}
+
+footer p {
+  font-size: clamp(0.6rem, 2vw, 0.9rem);
+}
