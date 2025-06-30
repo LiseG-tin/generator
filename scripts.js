@@ -30,58 +30,42 @@ function changeStyle(property, value) {
 }
 
 function generate() {
-  $("unicornsText").innerHTML = getOption(unicorns);
+  /* $("unicornsText").innerHTML = getOption(unicorns);
   $("featuresText").innerHTML = getOption(features);
-  /*
-  switch (features) {
-    case random === 0:
-      changeStyle("", "");
-      
-  }
-  */
+  
   $("firstRoomText").innerHTML = "The first room is " + getOption(rooms1);
   $("secondRoomText").innerHTML = "Then, you enter " + getOption(rooms2);
   $("thirdRoomText").innerHTML = "You find yourself in " + getOption(rooms3);
   $("forthRoomText").innerHTML =
     "The end of your journey is in " + getOption(rooms4);
-}
-
-/*
-
-version condensée de chat GPT :
-
-const unicorns = ["Licorne mignonne", "Terrifiante", "Bizarre"];
-const features = ["énergique", "perverse", "cruelle"];
-const rooms1 = ["désrete", "remplie", "grandiose", "tropicale"];
-const rooms2 = ["banale", "étrange", "nulle", "humide"];
-const rooms3 = ["géniale", "magnifique", "chaude", "seche"];
-const rooms4 = ["grande", "petite", "classe", "dégoutante"];
-
-function getOption(x) {
-  const random = Math.floor(Math.random() * x.length);
-  return x[random] + ".";
-}
-
-function $(id) {
-  return document.getElementById(id);
-}
-
-function generate() {
+}*/
   const elements = [
     { id: "unicornsText", array: unicorns },
     { id: "featuresText", array: features },
     { id: "firstRoomText", array: rooms1, prefix: "The first room is " },
     { id: "secondRoomText", array: rooms2, prefix: "Then, you enter " },
     { id: "thirdRoomText", array: rooms3, prefix: "You find yourself in " },
-    { id: "forthRoomText", array: rooms4, prefix: "The end of your journey is in " }
+    {
+      id: "forthRoomText",
+      array: rooms4,
+      prefix: "The end of your journey is in ",
+    },
   ];
 
   elements.forEach(({ id, array, prefix = "" }) => {
     $(id).innerHTML = prefix + getOption(array);
   });
 }
+/*
+  switch (features) {
+    case random === 0:
+      changeStyle("", "");
+      
+  }
+  */
+/*
 
-*/
+
 
 /*
 
