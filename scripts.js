@@ -94,7 +94,7 @@ function generate() {
     {
       id: "forthRoomText",
       array: rooms4,
-      prefix: "The end of your journey takes place in ",
+      prefix: "You end your journey within ",
     },
   ];
 
