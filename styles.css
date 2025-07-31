@@ -146,18 +146,6 @@ div {
       "room-4"
       "footer";
   }
-  /*
-  #unicornsDiv,
-  #featuresDiv,
-  #room1,
-  #room2,
-  #room3,
-  #room4,
-  footer {
-    grid-column: 1;
-  }
-
-  /* ... ton code existant ... */
 
   #unicornsDiv {
     grid-area: cheerful;
@@ -181,57 +169,6 @@ div {
     grid-area: footer;
   }
 }
-
-/* Mobile */
-/*
-@media (max-width: 500px) {
-  
-
-  body {
-    flex-direction: column;
-    height: auto;
-  }
-
-  header {
-    height: auto;
-    padding: 1rem;
-  }
-
-  header h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  header button {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-  }
-
-  main {
-    width: 95%;
-    padding: 20px;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "cheerful"
-      "distinctive"
-      "room-1"
-      "room-2"
-      "room-3"
-      "room-4"
-      "footer";
-  }
-
-  #unicornsDiv,
-  #featuresDiv,
-  #room1,
-  #room2,
-  #room3,
-  #room4,
-  footer {
-    grid-column: 1;
-  }
-}
-*/
 
 /* Styles */
 
@@ -338,11 +275,12 @@ h2 {
 h3 {
   font-size: clamp(1rem, 2.5vw, 1.4rem);
 }
+
 .hLeft {
-  border-radius: 0px 20px;
+  border-radius: 20px 20px;
 }
 .hRight {
-  border-radius: 20px 0px;
+  border-radius: 20px 20px;
 }
 
 p,
@@ -360,10 +298,10 @@ div.descriptions {
   border: solid 5px var(--accent-color);
 }
 .divLeft {
-  border-radius: 10px 50px;
+  border-radius: 50px 50px;
 }
 .divRight {
-  border-radius: 50px 10px;
+  border-radius: 50px 50px;
 }
 
 footer p {

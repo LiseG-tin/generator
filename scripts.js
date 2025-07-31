@@ -1,12 +1,54 @@
-const unicorns = ["Licorne mignonne", "Terrifiante", "Bizarre"];
-const features = ["énergique", "perverse", "cruelle"];
+const unicorns = [
+  "cruel, with butterfly wings",
+  "vicious, with slimy scales",
+  "artificial, with crushing gears",
+  "buzzing, with shiny shells",
+  "fanatical, with stitched members",
+  "alien, with sharp tentacles",
+];
+const features = [
+  "an exuberant forest",
+  "a submarine structure",
+  "an unknown machinery",
+  "luxuriant caves",
+  "ancient ruins",
+  "an ethereal space",
+];
 //const ambiance = ["tragique", "magique"];
-const rooms1 = ["désrete", "remplie", "grandiose", "tropicale"];
-const rooms2 = ["banale", "étrange", "nulle", "humide"];
+const rooms1 = [
+  "a cosy dormitory",
+  "a welcoming kitchen",
+  "steamed baths",
+  "a luxurious common room",
+  "a packed cellar",
+  "a dark cave",
+];
+const rooms2 = [
+  "a cramped shop",
+  "a stifling greenhouse",
+  "a stinky stable",
+  "a messy storage room",
+  "a damp well",
+  "an intimidating scholar room",
+];
 
-const rooms3 = ["géniale", "magnifique", "chaude", "seche"];
+const rooms3 = [
+  "a deserted menagerie",
+  "a soaked prison",
+  "a haunted machinery",
+  "a blooming body farm",
+  "a burned throne room",
+  "a tiny observatory",
+];
 
-const rooms4 = ["grande", "petite", "classe", "dégoutante"];
+const rooms4 = [
+  "an organic ballroom",
+  "an ominous theatre",
+  "a ruined factory",
+  "a living laboratory",
+  "a malevolent library",
+  "a bloody dissection room",
+];
 
 /* Comment faire fonction de génération unique ? 
 fonction generate devrait aller chercher aléatoirement une otpion dans tableau mis en argument
@@ -40,29 +82,50 @@ function generate() {
     "The end of your journey is in " + getOption(rooms4);
 }*/
   const elements = [
-    { id: "unicornsText", array: unicorns },
-    { id: "featuresText", array: features },
+    {
+      id: "unicornsText",
+      array: unicorns,
+      prefix: "The creatures that roam these grounds are ",
+    },
+    { id: "featuresText", array: features, prefix: "You are exploring " },
     { id: "firstRoomText", array: rooms1, prefix: "The first room is " },
     { id: "secondRoomText", array: rooms2, prefix: "Then, you enter " },
     { id: "thirdRoomText", array: rooms3, prefix: "You find yourself in " },
     {
       id: "forthRoomText",
       array: rooms4,
-      prefix: "The end of your journey is in ",
+      prefix: "The end of your journey takes place in ",
     },
   ];
 
   elements.forEach(({ id, array, prefix = "" }) => {
     $(id).innerHTML = prefix + getOption(array);
   });
-}
-/*
+  /*
   switch (features) {
-    case random === 0:
-      changeStyle("", "");
-      
-  }
-  */
+    case features[0]:
+      changeStyle("--background-color", "green");
+
+      break;
+    case features[1]:
+      changeStyle("--background-color", "red");
+      break;
+    case features[2]:
+      changeStyle("--background-color", "blue");
+      break;
+    case features[3]:
+      changeStyle("--background-color", "black");
+      break;
+    case features[4]:
+      changeStyle("--background-color", "pink");
+
+      break;
+    case features[5]:
+      changeStyle("--background-color", "yellow");
+      break;
+  } 
+      */
+}
 /*
 
 
